@@ -1,0 +1,58 @@
+body {
+  background: linear-gradient(135deg, rgb(10, 137, 211), rgb(80, 11, 192));
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 800px; /* Make the container wider if you prefer */
+  padding: 40px;
+  background: linear-gradient(to right, #4facfe, #00f2fe); /* Background gradient */
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+  border-radius: 20px; /* Rounded corners */
+  color: #fffdfd; /* Set text color to make sure it contrasts with the new background */
+}
+
+.header {
+  margin-bottom: 30px;
+  padding: 10px;
+}
+
+.card-container {
+  position: relative;
+  background: url('https://thinkstudent.co.uk/wp-content/uploads/2019/01/flashcards.jpg') no-repeat center center;
+  background-size: cover;
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card {
+  padding: 20px;
+  cursor: pointer;
+  margin: 20px auto;
+  width: 300px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.card img {
+  max-width: 100%;
+  max-height: 100%;
+  margin-bottom: 10px;
+}
+
+.next-button {
+  margin-top: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
