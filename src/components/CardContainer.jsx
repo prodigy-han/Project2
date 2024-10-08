@@ -3,21 +3,21 @@ import Card from './Card';
 import cardData from '../data/cardData';
 
 const CardContainer = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const getRandomIndex = () => {
-    return Math.floor(Math.random() * cardData.length);
-  };
-
+  const [currentCardIndex, setCurrentCardIndex] = useState(0);
+  
+  // Handle next card
   const handleNext = () => {
-    let newIndex = getRandomIndex();
-    while (newIndex === currentIndex && cardData.length > 1) {
-      newIndex = getRandomIndex();
-    }
-    setCurrentIndex(newIndex);
+    setCurrentCardIndex((prevIndex) => (prevIndex + 1) % cardData.length);
   };
 
-  const currentCard = cardData[currentIndex];
+  // Handle back card
+  const handleBack = () => {
+    setCurrentCardIndex((prevIndex) => 
+      prevIndex === 0 ? cardData.length - 1 : prevIndex - 1
+    );
+  };
+
+  const currentCard = cardData[currentCardIndex];
 
   return (
     <div className="card-container">
@@ -25,9 +25,11 @@ const CardContainer = () => {
         question={currentCard.question} 
         answer={currentCard.answer} 
         image={currentCard.image} 
-        color={currentCard.color} 
+        color={currentCard.color}
+        currentCardIndex={currentCardIndex}
+        handleNext={handleNext}
+        handleBack={handleBack}
       />
-      <button onClick={handleNext} className="next-button">➡️</button>
     </div>
   );
 };
